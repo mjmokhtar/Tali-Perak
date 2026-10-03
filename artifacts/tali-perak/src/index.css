@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&family=Silkscreen:wght@400;700&display=swap');
+@import 'tailwindcss';
+
+:root {
+  --ink: #070b18;
+  --night: #0d1530;
+  --teal: #3fa7a0;
+  --violet: #6b4fa0;
+  --lamp: #f6cf62;
+  --mist: #b9cfe0;
+  --blood: #c4566e;
+}
+html, body, #root { height: 100%; margin: 0; background: var(--ink); color: var(--mist); overflow: hidden; }
+body { font-family: 'Pixelify Sans', monospace; }
+.disp { font-family: 'Silkscreen', monospace; letter-spacing: .08em; }
+canvas.game { image-rendering: pixelated; image-rendering: crisp-edges; display: block; background: var(--ink); }
+.panel { background: rgba(9, 14, 34, .92); border: 2px solid var(--teal); box-shadow: 0 0 0 2px var(--ink), 4px 4px 0 2px #1a2650; }
+.btn { font-family: 'Silkscreen', monospace; font-size: 12px; padding: 8px 14px; border: 2px solid var(--teal); background: #101a3c; color: var(--mist); cursor: pointer; text-transform: uppercase; letter-spacing: .06em; }
+.btn:hover:not(:disabled) { background: var(--lamp); color: var(--ink); border-color: var(--lamp); }
+.btn:disabled { opacity: .35; cursor: default; }
+.field { font-family: 'Pixelify Sans'; font-size: 20px; background: var(--ink); border: 2px solid var(--violet); color: var(--lamp); padding: 6px 10px; outline: none; width: 100%; }
+.field:focus { border-color: var(--lamp); }
+.fade { animation: fade .6s ease both; }
+@keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.blink { animation: blink 1.2s steps(2) infinite; }
+@keyframes blink { 50% { opacity: .2; } }
+.title { color: var(--lamp); text-shadow: 3px 3px 0 var(--violet); }

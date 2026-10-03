@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Tali Perak"
+description = "A code-drawn pixel-art spirit adventure in Indonesian. Explore a rainy crash site and night streets, recover memories, possess objects, and protect the silver cord that leads you home."
+version = "1.0.0"
+id = "artifacts/tali-perak"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22205
+
+[services.development]
+run = "pnpm --filter @workspace/tali-perak run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/tali-perak", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/tali-perak/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22205"
+BASE_PATH = "/"

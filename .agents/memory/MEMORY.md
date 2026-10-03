@@ -1,0 +1,1 @@
+- [Chapter expansion saves](chapter-expansion-saves.md) — preserve completed MVP saves and resume into newly available chapters.
