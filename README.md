@@ -1,51 +1,58 @@
 # Tali Perak
 
-A browser-playable complete five-chapter game based on the supplied PRD. Indonesian story,
-code-drawn Canvas pixel art, original Web Audio, and three local save slots.
+**Bahasa Indonesia** · [English](README.en.md)
 
-Product requirements: [docs/PRD.md](docs/PRD.md). Game source: `artifacts/tali-perak/`.
+Game petualangan arwah pixel art lima bab yang bisa dimainkan di browser, berdasarkan dokumen kebutuhan produk
+([PRD](docs/PRD.md)). Cerita berbahasa Indonesia, grafis pixel art digambar lewat kode Canvas, audio Web Audio orisinal,
+dan tiga slot simpanan lokal. Kode game ada di `artifacts/tali-perak/`.
 
-## Play
+## Cara bermain
 
-Choose **Mulai baru**, enter a name, select a slot and choose **Berangkat**.
-WASD/arrows move; Z/Space interact; Esc pauses.
-Ordinary walls are phaseable. Glowing salt barriers are solid. Yellow lamps
-restore the silver cord. Collect two memories in each chapter, and interact
-with the exit. In chapter two, possess the gate lamp first.
-In chapter three, possess the bedroom radio, follow the cat, talk to it at the
-back door, then possess the door. Find at least two family memories before leaving.
+Pilih **Mulai baru**, isi nama, pilih slot, lalu pilih **Berangkat**.
+Gerak dengan WASD atau tombol panah; Z/Spasi/Enter untuk berinteraksi; Esc untuk jeda.
+Dinding biasa bisa ditembus sebagai arwah. Garis garam yang bercahaya tidak bisa ditembus. Lampu kuning memulihkan tali perak.
+Kumpulkan sedikitnya dua kenangan di setiap bab, lalu berinteraksi dengan pintu keluar.
 
-## Scope
+- **Bab 2:** rasuki lampu gerbang lebih dulu.
+- **Bab 3:** rasuki radio kamar, ikuti kucing, bicara dengannya di pintu belakang, lalu rasuki pintunya.
+- **Bab 4:** rasuki jam besar, tunggu perawat menjauh dari pintu ICU, lalu rasuki pintunya.
+- **Bab 5:** rasuki monitor untuk melarutkan tirai garam, lalu dekati ranjang dan pilih akhir cerita.
 
-Chapters 1–5, fifteen memories, radio/lamp/clock/door/monitor possession, a child, lost spirit, cat and patrolling nurse,
-patrolling ghosts, three endings (going home, letting go, lost), pause/journal/audio controls, local saves.
-Earlier chapter-two, -three and -four completion saves resume into the next chapter without losing
-the name, collected memories, elapsed time, or chosen slot.
-The current compact levels do not yet establish the PRD's 20–30-minute session
-target; pacing and player testing are still needed. 60 FPS is the render target,
-not a benchmark claim.
+## Akhir cerita
 
-## Structure and data model
+- **Pulang:** butuh sedikitnya 12 dari 15 kenangan.
+- **Melepas:** selalu tersedia.
+- **Terlupakan:** tali perak habis.
 
-`artifacts/tali-perak/src/game/engine.ts`: player, areas, collisions, puzzles, fragments and save logic.
-`artifacts/tali-perak/src/game/story.ts`: centralized Indonesian narrative and fragment text.
-`artifacts/tali-perak/src/game/render.ts`: code-drawn pixel scenery, sprites, camera, cord and effects.
-`artifacts/tali-perak/src/game/home-art.ts`: indoor furnishings and the animated cat sprite.
-`artifacts/tali-perak/src/game/hospital-art.ts`: hospital interior, nurse and clock sprites.
-`artifacts/tali-perak/src/game/icu-art.ts`: ICU room, monitor and mother sprites.
-`artifacts/tali-perak/src/game/audio.ts`: browser-generated ambience, music and effects.
-`artifacts/tali-perak/src/App.tsx`: menus, name/slot selection, HUD, journal, settings and game loop.
+## Cakupan
 
-Area owns walls/layers, fragments, objects and NPCs; fragments link to memory
-scenes; object state and fragment count satisfy puzzle conditions. Player state
-is recorded by SaveGame (one browser-local record per slot); collected fragment
-IDs connect saves to memories. Endings are cord loss, and the going-home or
-letting-go choice at the end of chapter five. No SQL database or network service is used.
+Bab 1–5, lima belas kenangan, perasukan radio/lampu/jam/pintu/monitor, anak kecil, arwah tersesat, kucing, perawat yang berpatroli,
+hantu yang berpatroli, tiga akhir cerita, kontrol jeda/jurnal/audio, dan simpanan lokal.
+Simpanan lama yang sudah tamat tetap berlanjut ke bab berikutnya tanpa kehilangan nama, kenangan, waktu, atau slot.
 
-The core uses Canvas and Web Audio without a game engine. React/Vite provide the
-hosting/menu shell within the supplied project scaffold. Save slots are local
-to this browser/origin, not synchronized between devices. Browser storage
-failures are shown to the player.
+Belum selesai: level yang ringkas belum mencapai target sesi 20–30 menit di PRD (perlu uji tempo dan uji pemain),
+dan 60 FPS adalah target render, bukan hasil pengukuran.
 
-Run through the configured Tali Perak workflow.
-Type check: `pnpm --filter @workspace/tali-perak run typecheck`.
+## Struktur
+
+- `artifacts/tali-perak/src/game/engine.ts`: pemain, area, tabrakan, teka-teki, serpihan, akhir cerita, dan logika simpanan.
+- `artifacts/tali-perak/src/game/story.ts`: seluruh narasi dan teks kenangan berbahasa Indonesia.
+- `artifacts/tali-perak/src/game/render.ts`: latar, sprite, kamera, tali perak, dan efek yang digambar lewat kode.
+- `artifacts/tali-perak/src/game/home-art.ts`: perabot rumah dan animasi kucing.
+- `artifacts/tali-perak/src/game/hospital-art.ts`: interior rumah sakit, perawat, dan jam.
+- `artifacts/tali-perak/src/game/icu-art.ts`: ruang ICU, monitor, dan sosok ibu.
+- `artifacts/tali-perak/src/game/audio.ts`: suasana, musik, dan efek suara yang dibuat di browser.
+- `artifacts/tali-perak/src/App.tsx`: menu, pilihan nama/slot, HUD, jurnal, pengaturan, dan game loop.
+
+Setiap area memiliki dinding, serpihan, objek, dan NPC sendiri. Serpihan terhubung ke adegan kenangan; status objek dan jumlah
+serpihan menentukan syarat teka-teki. Status pemain disimpan di localStorage browser, satu catatan per slot.
+Tidak ada database SQL maupun layanan jaringan.
+
+Inti game memakai Canvas dan Web Audio tanpa mesin game; React/Vite hanya untuk kerangka menu.
+Slot simpanan bersifat lokal pada browser dan origin, tidak tersinkron antar perangkat.
+Kegagalan penyimpanan browser ditampilkan kepada pemain.
+
+## Pengembangan
+
+Jalankan lewat workflow Tali Perak.
+Cek tipe: `pnpm --filter @workspace/tali-perak run typecheck`.

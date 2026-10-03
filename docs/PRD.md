@@ -1,309 +1,306 @@
-# PRD – Pixel Art Game: Tali Perak (EN)
+# PRD – Game Pixel Art: Arwah Mati Suri
+
+[Bahasa Indonesia](PRD.md) · [English](PRD.en.md)
 
 Oct 3, 2026 · @MJ Mokhtar
 
-## Product overview
+## Ringkasan produk
 
-**Tali Perak** (working title, "The Silver Cord") is a 2D pixel art adventure game about the spirit of a person in a near-death state who must find the way back to their body before the "silver cord" connecting them snaps. Everything in this document is an initial proposal and can be changed.
+**Tali Perak** (judul sementara) adalah game petualangan 2D pixel art tentang arwah seseorang yang mati suri dan harus menemukan jalan kembali ke tubuhnya sebelum "tali perak" yang menghubungkan keduanya putus. Semua isi dokumen ini adalah usulan awal yang bisa diubah.
 
-- **Genre:** 2D top-down puzzle-adventure with exploration and a short story
-- **Platform:** desktop browser (HTML5 Canvas); touch controls for mobile considered after the MVP
-- **Target players:** casual to mid-core players who enjoy short indie narrative games
-- **Tone:** sad, warm, and eerie at the same time
-- **Design pillars:**
-  1. Going home is the only goal; every area brings the player closer to, or further from, the body
-  2. Time pressures gently, never with panic
-  3. One world, two layers: the real world and the spirit world
-  4. Sad but warm, with a touch of the eerie present at the same time
+- **Genre:** puzzle-adventure 2D top-down dengan eksplorasi dan cerita pendek
+- **Platform:** browser desktop (HTML5 Canvas); kontrol sentuh untuk mobile dipertimbangkan setelah MVP
+- **Target pemain:** pemain casual hingga menengah yang menyukai game naratif pendek bergaya indie
+- **Pilar desain:**
+  1. Pulang adalah satu-satunya tujuan, setiap area mendekatkan atau menjauhkan pemain dari tubuhnya
+  2. Waktu menekan dengan lembut, bukan dengan panik
+  3. Satu dunia, dua lapisan: dunia nyata dan dunia arwah
+  4. Sedih tapi hangat, dengan sentuhan seram yang hadir bersamaan
 
-## Background and story premise
+## Latar belakang dan premis cerita
 
-The protagonist is 28 years old (the player chooses the name at the start of the game; this document calls them Laras). Laras is in a road accident on a rainy night. Her body is taken to the hospital and falls into a near-death state, while her spirit wakes up alone at the crash site.
+Protagonis berusia 28 tahun (namanya dipilih pemain di awal game; di dokumen ini disebut Laras), mengalami kecelakaan di jalan raya pada malam hujan. Tubuhnya dibawa ke rumah sakit dan jatuh ke kondisi mati suri, sementara arwahnya terbangun sendirian di lokasi kecelakaan.
 
-A thin glowing cord links her spirit to her body. The cord keeps shortening, and if it runs out, the spirit can never return. To go home, Laras must cross a fictional city in a far-off, nowhere world, pass through her own house, and finally enter the hospital where her body lies.
+Sebuah tali tipis berpendar menghubungkan arwahnya ke tubuh. Tali itu terus memendek, dan jika habis, arwah tidak bisa kembali. Untuk pulang, Laras harus menyeberangi kota fiktif di dunia antah berantah, melewati rumahnya sendiri, lalu masuk ke rumah sakit tempat tubuhnya terbaring.
 
-Along the way she finds memory fragments that reveal who she is, who is waiting for her, and what makes her want (or hesitate) to return.
+Di sepanjang jalan ia menemukan serpihan ingatan yang menjelaskan siapa dirinya, siapa yang menunggunya, dan apa yang membuatnya ingin (atau ragu) untuk kembali.
 
-## Goals and non-goals
+## Tujuan dan non-tujuan
 
-The product aims to deliver a complete 20 to 30 minute experience (MVP) with an opening, challenges, and an emotional ending.
+Produk ini bertujuan memberi pengalaman 20 sampai 30 menit (MVP) yang utuh: ada pembukaan, tantangan, dan akhir yang emosional.
 
-**Goals**
+**Tujuan**
 
-- Players understand the spirit mechanics within the first 2 minutes without a long tutorial
-- Players feel time pressure through the shrinking silver cord
-- The story is delivered through memory fragments, not long text
-- All graphics are generated from code (pixel grids + palettes), with no external image assets
-- Three endings from the start of the design
+- Pemain memahami mekanik arwah dalam 2 menit pertama tanpa tutorial panjang
+- Pemain merasakan tekanan waktu lewat tali perak yang memendek
+- Cerita tersampaikan lewat serpihan ingatan, bukan teks panjang
+- Seluruh grafis dibuat dari kode (grid piksel + palet), tanpa aset gambar eksternal
 
-**Non-goals (first version)**
+**Non-tujuan (untuk versi awal)**
 
-- No multiplayer
-- No weapon combat; challenges are puzzles and evasion; no jump scares, the eerie feeling is built through animations of ghosts attacking the player
-- No third-party characters, music, or assets
-- Player customization is the name only; the character's appearance is fixed
+- Tidak ada multiplayer
+- Tidak ada pertarungan senjata; tantangan berupa teka-teki dan menghindar; tanpa jump scare, rasa seram dibangun lewat animasi hantu yang menyerang pemain
+- Tidak memakai karakter, musik, atau aset milik pihak lain
 
-## Core gameplay and mechanics
+## Gameplay inti dan mekanik
 
-The player controls a spirit floating through a two-layer world, collecting memory fragments to open the path to their body while keeping the silver cord from running out.
+Pemain mengendalikan arwah yang melayang di dunia dua lapisan, mengumpulkan serpihan ingatan untuk membuka jalan menuju tubuhnya sambil menjaga tali perak tetap panjang.
 
-| Mechanic | How it works | Role in the game |
+| Mekanik | Cara kerja | Fungsi dalam game |
 | --- | --- | --- |
-| Floating and phasing through walls | The spirit moves in 8 directions and passes through ordinary walls | Shortcuts and exploration |
-| Blessed walls | Salt, mirrors, or certain marks block the spirit | Puzzles: find another route |
-| Possessing objects | Pressing the action button near a small object (lamp, door, radio) moves it briefly | Unlocks mechanisms and draws attention |
-| Memory fragments | Light shards scattered across each area; touching one plays a short scene | Story and the requirement to open the next chapter |
-| Silver cord | A meter that drains over time and when touching danger | Time pressure and the lose condition |
-| Light points (candles, lamps, prayers) | Standing near them slowly restores the cord | Rest spots and route decisions |
-| Seen by the living | Only small children and pets can see the spirit | Unique interactions and hints |
-| Ghost attack | When a hostile ghost catches the player, a dedicated attack animation plays and the cord shrinks | Danger without jump scares |
+| Melayang dan tembus dinding | Arwah bergerak 8 arah dan melewati dinding biasa | Jalan pintas dan eksplorasi |
+| Dinding berkat | Garam, cermin, atau tanda tertentu menahan arwah | Teka-teki: cari jalan memutar |
+| Merasuki benda | Menekan tombol aksi di dekat benda kecil (lampu, pintu, radio) untuk menggerakkannya sebentar | Membuka mekanisme dan menarik perhatian |
+| Serpihan ingatan | Pecahan cahaya tersebar di tiap area; disentuh memutar adegan singkat | Cerita dan syarat membuka pintu bab berikutnya |
+| Tali perak | Meter yang berkurang seiring waktu dan saat menyentuh hal berbahaya | Tekanan waktu dan kondisi kalah |
+| Titik cahaya (lilin, lampu, doa) | Berdiri di dekatnya memulihkan tali perak sedikit demi sedikit | Tempat istirahat dan keputusan rute |
+| Dilihat makhluk hidup | Hanya anak kecil dan hewan peliharaan yang bisa melihat arwah | Interaksi unik dan petunjuk |
 
-## World structure and story progression
+## Struktur dunia dan progres cerita
 
-The game takes place in a fictional city in a far-off, nowhere world, with no real-world countries or places. It has five chapters in order, each one area, with one constant goal: get closer to the body.
+Latar game adalah kota fiktif di dunia antah berantah, tanpa negara atau tempat nyata. Game terdiri dari lima bab berurutan, masing-masing satu area, dengan satu tujuan tetap: bergerak lebih dekat ke tubuh.
 
-| Chapter | Area | Core challenge | Memory fragment |
+| Bab | Area | Inti tantangan | Serpihan ingatan |
 | --- | --- | --- | --- |
-| 1 | Crash site | Learning to float and phase through walls | The night of the accident |
-| 2 | City streets at night | Blessed walls, streetlights as light points | Work and friends |
-| 3 | Her own house | Possessing objects, meeting the pet | Family |
-| 4 | Hospital lobby and corridors | Avoiding the guardian spirit, visiting hours | Regret |
-| 5 | Intensive care room | Final puzzle in front of her own body | Decision |
+| 1 | Lokasi kecelakaan | Belajar melayang dan tembus dinding | Malam kecelakaan |
+| 2 | Jalanan kota malam | Dinding berkat, lampu jalan sebagai titik cahaya | Pekerjaan dan teman |
+| 3 | Rumah sendiri | Merasuki benda, bertemu hewan peliharaan | Keluarga |
+| 4 | Lobi dan lorong rumah sakit | Menghindari arwah penjaga, jam kunjungan | Penyesalan |
+| 5 | Ruang perawatan intensif | Teka-teki terakhir di depan tubuh sendiri | Keputusan |
 
-**Three endings** are decided by the number of memory fragments and the choice in chapter 5:
+**Tiga akhir** ditentukan oleh jumlah serpihan ingatan dan pilihan di bab 5:
 
-- **Going home:** the player returns to the body and wakes up
-- **Letting go:** the spirit accepts the departure and says goodbye to those waiting
-- **Lost:** the silver cord runs out before arriving
+- **Pulang:** pemain kembali ke tubuh dan terbangun
+- **Melepas:** arwah menerima kepergian dan berpamitan dengan orang yang menunggu
+- **Tersesat:** tali perak habis sebelum sampai
 
-## Characters, NPCs, and enemies
+## Karakter, NPC, dan musuh
 
-All characters are original and designed to read clearly at small sprite sizes.
+Semua karakter orisinal dan dirancang agar terbaca jelas pada sprite kecil.
 
-| Name (working) | Role | Design notes |
+| Nama (sementara) | Peran | Catatan desain |
 | --- | --- | --- |
-| Laras | Protagonist, spirit; name chosen by the player (Laras = default), fixed appearance | Translucent bluish silhouette, sways gently while floating |
-| Bima | Neighbor's child | The only human who can see Laras; gives hints |
-| House cat | Pet | Can see spirits; opens the way in chapter 3 |
-| Mother / family | People behind the memories | Appear in memory fragments and the waiting room |
-| Night nurse | Hospital human | Cannot see the spirit; patrol pattern becomes a puzzle |
-| Threshold Guardian (Penjaga Ambang) | Chapter 4 guardian spirit | Patrols; if it catches the player, the ghost attacks with a dedicated animation and drains the silver cord |
-| Lost spirit | Neutral NPC | Gives hints in exchange for one fragment |
+| Laras | Protagonis, arwah; nama dipilih pemain (Laras = nama bawaan), penampilan tetap | Siluet transparan kebiruan, bergoyang pelan saat melayang |
+| Bima | Anak tetangga | Satu-satunya manusia yang bisa melihat Laras; pemberi petunjuk |
+| Kucing rumah | Hewan peliharaan | Bisa melihat arwah; membuka jalan di bab 3 |
+| Ibu / keluarga | Tokoh di balik ingatan | Muncul di serpihan ingatan dan ruang tunggu |
+| Perawat jaga | Manusia di rumah sakit | Tidak melihat arwah; pola patroli jadi teka-teki |
+| Penjaga Ambang | Arwah penjaga bab 4 | Berpatroli; jika menangkap pemain, hantu menyerang dengan animasi khusus dan mengurangi tali perak |
+| Arwah tersesat | NPC netral | Memberi petunjuk dengan imbalan satu serpihan |
 
-## Pixel art direction
+## Arah visual pixel art
 
-The visual style uses a low internal resolution scaled by whole numbers, with two palettes to separate the real world from the spirit world.
+Gaya visual memakai resolusi rendah yang di-scale bulat, dengan dua palet untuk membedakan dunia nyata dan dunia arwah.
 
-| Aspect | Proposal |
+| Aspek | Usulan |
 | --- | --- |
-| Internal resolution | 320 x 180 pixels, scaled in integer steps with no smoothing |
-| Tile size | 16 x 16 pixels |
-| Character sprite size | 16 x 24 pixels |
-| Real-world palette | 16 colors, cool: dark blue, gray, lamp yellow |
-| Spirit-world palette | Teal, purple, and glowing white; the spirit is semi-transparent |
-| Animation | Idle 2 frames, floating 4 frames, cord and fragment effects 3 frames |
-| UI | Silver cord meter at the top corner, pixel dialogue boxes, bitmap font |
-| Sprite creation | Written as pixel matrices in code; can be replaced by hand-drawn art (Aseprite or Piskel) later |
+| Resolusi internal | 320 x 180 piksel, di-scale kelipatan bulat tanpa smoothing |
+| Ukuran tile | 16 x 16 piksel |
+| Ukuran sprite karakter | 16 x 24 piksel |
+| Palet dunia nyata | 16 warna, dingin: biru tua, abu, kuning lampu |
+| Palet dunia arwah | Teal, ungu, dan putih berpendar; arwah semi-transparan |
+| Animasi | Idle 2 frame, melayang 4 frame, efek tali perak dan serpihan 3 frame |
+| UI | Meter tali perak di sudut atas, dialog dengan kotak piksel, font bitmap |
+| Pembuatan sprite | Ditulis sebagai matriks piksel di kode; bisa diganti hasil gambar tangan (Aseprite atau Piskel) nanti |
 
-## Audio and atmosphere
+## Audio dan suasana
 
-Audio is original and generated with the Web Audio API, so no external sound files are needed.
+Audio dibuat orisinal dan dihasilkan lewat Web Audio API, sehingga tidak butuh file suara eksternal.
 
-- **Music:** simple, slow chiptune tones; echo added in the spirit world
-- **Sound effects:** floating footsteps, fragment pickup, a heartbeat when the cord runs low
-- **Atmosphere:** deliberate silence in emotional moments, warm tones blended with eerie elements (shadows, whispers), heartbeat speeds up when the cord is below 25%
-- **Audio controls:** mute button and volume control from the MVP
+- **Musik:** nada sederhana bergaya chiptune yang pelan; di dunia arwah ditambah gema
+- **Efek suara:** langkah melayang, serpihan terambil, detak saat tali perak menipis
+- **Suasana:** hening yang disengaja di momen emosional, nada hangat berpadu dengan elemen seram (bayangan, bisikan), kecepatan detak naik saat tali perak di bawah 25%
+- **Kontrol audio:** tombol bisu dan pengatur volume sejak MVP
 
-## Functional and technical requirements
+## Kebutuhan fungsional dan teknis
 
-The MVP runs fully in the browser with plain JavaScript and HTML5 Canvas, with no extra dependencies, so it is easy to run and learn from.
+MVP berjalan penuh di browser dengan JavaScript murni dan HTML5 Canvas, tanpa dependensi tambahan, agar mudah dijalankan dan dipelajari.
 
-- **Stack:** HTML, JavaScript ES modules, Canvas 2D; a build tool or framework is added only if truly needed
-- **Game loop:** fixed time-step update, 60 FPS rendering
-- **Controls:** arrow keys or WASD to move, Z or Space for action, Esc to pause
-- **Maps:** tile maps as arrays/JSON per area, with a real-world layer and a spirit-world layer
-- **Collision:** simple boxes (AABB); blessed walls and ordinary walls differ by tile attribute
-- **Saving progress:** `localStorage` per slot (chapter, fragments collected, position, silver cord)
+- **Stack:** HTML, JavaScript modul (ES modules), Canvas 2D; build tool atau framework hanya ditambah jika benar-benar dibutuhkan
+- **Game loop:** update dengan langkah waktu tetap, render 60 FPS
+- **Kontrol:** panah atau WASD untuk bergerak, Z atau Spasi untuk aksi, Esc untuk jeda
+- **Peta:** tile map dalam array/JSON per area, dengan layer dunia nyata dan layer dunia arwah
+- **Tabrakan:** kotak sederhana (AABB); dinding berkat dan dinding biasa dibedakan oleh atribut tile
+- **Simpan progres:** `localStorage` per slot (bab, serpihan terkumpul, posisi, tali perak)
 - **Audio:** Web Audio API
-- **Performance:** steady 60 FPS on an ordinary laptop; all assets under 1 MB because they are drawn from code
-- **Language:** Indonesian in-game, text kept in a single file so it can be translated
+- **Performa:** tetap 60 FPS di laptop biasa; seluruh aset di bawah 1 MB karena digambar dari kode
+- **Bahasa:** Bahasa Indonesia, teks dipisah di satu berkas agar mudah diterjemahkan
 
-## Data structure and ERD
+## Struktur data (calon ERD)
 
-Ten main entities support the game; this is the starting material for the ERD before any code is written.
+Sepuluh entitas utama menopang game; ini bahan awal untuk ERD sebelum kode ditulis.
 
-| Entity | Main attributes | Relations |
+| Entitas | Atribut utama | Relasi |
 | --- | --- | --- |
-| Player | x/y position, silver cord, form (spirit/body) | has many collected Fragments |
-| Area | id, name, chapter, palette | has many Tile layers, Objects, NPCs |
-| TileLayer | area\_id, layer (real/spirit), tile data | belongs to Area |
-| Object | id, type (lamp, door, radio), state, area\_id | linked to Puzzles |
-| Fragment | id, area\_id, title, scene | collected by Player |
-| NPC | id, name, can\_see\_spirit, area\_id | has Dialogue |
-| Dialogue | id, npc\_id, text, condition | belongs to NPC |
-| Puzzle | id, area\_id, condition, result (opens a path) | uses Objects and Fragments |
-| SaveGame | slot, chapter, collected fragments, silver cord, save time | records Player |
-| Ending | id, condition (fragment count, choice) | determined from SaveGame |
+| Player | posisi x/y, tali\_perak, wujud (arwah/tubuh) | punya banyak Serpihan terkumpul |
+| Area | id, nama, bab, palet | punya banyak Tile layer, Objek, NPC |
+| TileLayer | area\_id, lapisan (nyata/arwah), data tile | milik Area |
+| Objek | id, tipe (lampu, pintu, radio), status, area\_id | terhubung ke Teka-teki |
+| Serpihan | id, area\_id, judul, adegan | dikumpulkan Player |
+| NPC | id, nama, bisa\_melihat\_arwah, area\_id | punya Dialog |
+| Dialog | id, npc\_id, teks, syarat | milik NPC |
+| Teka-teki | id, area\_id, syarat, hasil (buka jalan) | memakai Objek dan Serpihan |
+| SaveGame | slot, bab, serpihan\_terkumpul, tali\_perak, waktu simpan | merekam Player |
+| Akhir | id, syarat (jumlah serpihan, pilihan) | ditentukan dari SaveGame |
 
 ### ERD
 
-Every area entity (tiles, objects, NPCs, fragments, puzzles) points to Area through `area_id`; two join tables are needed for the many-to-many relations.
+Setiap entitas area (tile, objek, NPC, serpihan, teka-teki) menunjuk ke Area lewat `area_id`; dua tabel penghubung dibutuhkan untuk relasi banyak-ke-banyak.
 
 ```mermaid
 erDiagram
-    AREA ||--o{ TILE_LAYER : has
-    AREA ||--o{ OBJECT : contains
-    AREA ||--o{ NPC : inhabited_by
-    AREA ||--o{ FRAGMENT : holds
-    AREA ||--o{ PUZZLE : challenges
-    NPC ||--o{ DIALOGUE : says
-    PUZZLE ||--o{ PUZZLE_OBJECT : uses
-    OBJECT ||--o{ PUZZLE_OBJECT : used_in
-    PLAYER ||--o{ SAVE_GAME : saved_as
-    SAVE_GAME ||--o{ COLLECTED_FRAGMENT : records
-    FRAGMENT ||--o{ COLLECTED_FRAGMENT : picked_up
-    ENDING |o--o{ SAVE_GAME : closes
+    AREA ||--o{ TILE_LAYER : memiliki
+    AREA ||--o{ OBJEK : berisi
+    AREA ||--o{ NPC : dihuni
+    AREA ||--o{ SERPIHAN : menyimpan
+    AREA ||--o{ TEKA_TEKI : menantang
+    NPC ||--o{ DIALOG : mengucapkan
+    TEKA_TEKI ||--o{ TEKA_TEKI_OBJEK : memakai
+    OBJEK ||--o{ TEKA_TEKI_OBJEK : dipakai
+    PLAYER ||--o{ SAVE_GAME : direkam
+    SAVE_GAME ||--o{ SERPIHAN_TERKUMPUL : mencatat
+    SERPIHAN ||--o{ SERPIHAN_TERKUMPUL : diambil
+    AKHIR |o--o{ SAVE_GAME : menutup
 
     AREA {
         int id PK
-        string name
-        int chapter
-        string palette
+        string nama
+        int bab
+        string palet
     }
     TILE_LAYER {
         int id PK
         int area_id FK
-        string layer
+        string lapisan
         json data
     }
-    OBJECT {
+    OBJEK {
         int id PK
         int area_id FK
-        string type
-        string state
+        string tipe
+        string status
     }
-    FRAGMENT {
+    SERPIHAN {
         int id PK
         int area_id FK
-        string title
-        string scene
+        string judul
+        string adegan
     }
     NPC {
         int id PK
         int area_id FK
-        string name
-        bool can_see_spirit
+        string nama
+        bool bisa_melihat_arwah
     }
-    DIALOGUE {
+    DIALOG {
         int id PK
         int npc_id FK
-        string text
-        string condition
+        string teks
+        string syarat
     }
-    PUZZLE {
+    TEKA_TEKI {
         int id PK
         int area_id FK
-        string condition
-        string result
+        string syarat
+        string hasil
     }
-    PUZZLE_OBJECT {
-        int puzzle_id FK
-        int object_id FK
+    TEKA_TEKI_OBJEK {
+        int teka_teki_id FK
+        int objek_id FK
     }
     PLAYER {
         int id PK
-        string name
+        string nama
         float x
         float y
-        float silver_cord
+        float tali_perak
     }
     SAVE_GAME {
         int slot PK
         int player_id FK
-        int chapter
-        int ending_id FK
-        datetime saved_at
+        int bab
+        int akhir_id FK
+        datetime waktu_simpan
     }
-    COLLECTED_FRAGMENT {
+    SERPIHAN_TERKUMPUL {
         int slot FK
-        int fragment_id FK
+        int serpihan_id FK
     }
-    ENDING {
+    AKHIR {
         int id PK
-        string name
-        string condition
+        string nama
+        string syarat
     }
 ```
 
-`ending_id` in SAVE\_GAME stays empty until the player reaches one of the three endings.
+`akhir_id` di SAVE\_GAME kosong sampai pemain mencapai salah satu dari tiga akhir.
 
-There is no server database. Static data (areas, dialogue, fragments, endings) is read from JSON files in the `data/` folder, while PLAYER, SAVE\_GAME, and COLLECTED\_FRAGMENT are stored in the player's browser `localStorage`.
+Tidak ada database server. Data statis (area, dialog, serpihan, akhir) dibaca dari berkas JSON di folder `data/`, sedangkan PLAYER, SAVE\_GAME, dan SERPIHAN\_TERKUMPUL disimpan di `localStorage` browser pemain.
 
-## Proposed folder structure
+## Usulan struktur folder
 
-This structure has not been used for any code yet; please confirm or change it first.
+Struktur ini belum dipakai untuk kode apa pun; mohon dikonfirmasi atau diubah dulu.
 
 ```text
 tali-perak/
 ├── index.html
 ├── src/
 │   ├── main.js
-│   ├── core/        loop, input, camera, audio, save progress
-│   ├── world/       areas, tile map, collision
-│   ├── entities/    player, ghost, npc, object
-│   ├── systems/     silver cord, fragments, puzzles, dialogue
-│   ├── ui/          hud, dialogue box, menu, name input
-│   └── art/         color palette, sprites (pixel matrices)
+│   ├── core/        loop, input, kamera, audio, simpan progres
+│   ├── world/       area, tile map, tabrakan
+│   ├── entities/    player, hantu, npc, objek
+│   ├── systems/     tali perak, serpihan, teka-teki, dialog
+│   ├── ui/          hud, kotak dialog, menu, input nama
+│   └── art/         palet warna, sprite (matriks piksel)
 ├── data/
-│   ├── areas/       chapter1.json, chapter2.json, ...
-│   ├── dialogue.id.json
-│   ├── fragments.json
-│   └── endings.json
+│   ├── areas/       bab1.json, bab2.json, ...
+│   ├── dialog.id.json
+│   ├── serpihan.json
+│   └── akhir.json
 └── README.md
 ```
 
-No `package.json` and no build tool in the early stage; just an `index.html` that loads the JavaScript modules, served by a simple static server.
+Tanpa `package.json` dan tanpa build tool di tahap awal; cukup `index.html` yang memuat modul JavaScript, dijalankan lewat server statis sederhana.
 
-## MVP scope and work stages
+## Ruang lingkup MVP dan tahap pengerjaan
 
-The MVP covers chapters 1 and 2 and the framework for three endings (all three finished in stage 6), enough to test whether the feeling of "going home" and the pressure of the silver cord are fun.
+MVP mencakup bab 1 dan 2 dan kerangka tiga akhir (ketiganya selesai di tahap 6), cukup untuk menguji apakah rasa "pulang" dan tekanan tali perak sudah menyenangkan.
 
-| Stage | Content | Testable result |
+| Tahap | Isi | Hasil yang bisa diuji |
 | --- | --- | --- |
-| 0 | PRD, ERD, folder structure agreed | Document approved |
-| 1 | Game loop, camera, floating movement, tile map | Spirit can move in one room |
-| 2 | Wall phasing, blessed walls, silver cord | Core mechanic feels right |
-| 3 | Full chapter 1: fragments, dialogue, light points | One area can be completed |
-| 4 | Chapter 2: object possession, first puzzle | 20 to 30 minute MVP |
-| 5 | Audio, saving progress, visual polish | Ready to share |
-| 6 | Chapters 3 to 5 and the three endings | Full version |
+| 0 | PRD, ERD, struktur folder disepakati | Dokumen disetujui |
+| 1 | Game loop, kamera, gerak melayang, tile map | Arwah bisa bergerak di satu ruangan |
+| 2 | Tembus dinding, dinding berkat, tali perak | Mekanik inti terasa |
+| 3 | Bab 1 lengkap: serpihan, dialog, titik cahaya | Satu area bisa diselesaikan |
+| 4 | Bab 2: merasuki benda, teka-teki pertama | MVP 20 sampai 30 menit |
+| 5 | Audio, simpan progres, polesan visual | Siap dibagikan |
+| 6 | Bab 3 sampai 5 dan tiga akhir | Versi penuh |
 
-**MVP success measures (proposed):**
+**Ukuran keberhasilan MVP (usulan):**
 
-- New players finish chapter 1 without help
-- Average session length of 20 minutes or more
-- At least 7 out of 10 testers say they want to know what happens next
+- Pemain baru menyelesaikan bab 1 tanpa bantuan
+- Rata-rata sesi bermain 20 menit atau lebih
+- Minimal 7 dari 10 penguji menyebut ingin tahu kelanjutan ceritanya
 
-## Risks, assumptions, and decisions
+## Risiko, asumsi, dan pertanyaan terbuka
 
-**Risks**
+**Risiko**
 
-- Time pressure can feel annoying if the silver cord drains too fast; needs testing and tuning
-- Wall-phasing puzzles can be too easy since players can pass through almost anywhere
-- Sprites drawn from code are limited in quality compared with hand-drawn art
+- Tekanan waktu bisa terasa menyebalkan jika tali perak terlalu cepat habis; perlu uji dan penyesuaian
+- Teka-teki tembus dinding bisa terlalu mudah karena pemain bisa lewat hampir di mana saja
+- Sprite digambar dari kode terbatas kualitasnya dibanding gambar tangan
 
-**Assumptions**
+**Asumsi**
 
-- Desktop browser platform, Indonesian in-game language, no extra dependencies
-- Names, supporting characters, and setting are placeholders that can be replaced
+- Platform browser desktop, bahasa Indonesia, tanpa dependensi tambahan
+- Nama, tokoh, dan latar adalah placeholder yang boleh diganti
 
-**MJ's decisions**
+**Keputusan M****J**
 
-- [x] Tone: sad, warm, and eerie together
-- [x] Setting: a fictional city in a far-off, nowhere world
-- [x] The player chooses the protagonist's name
-- [x] Three endings from the start of the design
-- [x] No jump scares; eeriness through animations of ghosts attacking the player
-- [x] Customization is the name only; appearance stays fixed
-- [x] After the PRD is approved, continue to the ERD and folder structure before any code
-- [ ] Confirm the folder structure above
+- [x] Nuansa: sedih, hangat, dan seram bersamaan
+- [x] Latar: kota fiktif di dunia antah berantah
+- [x] Nama protagonis dipilih pemain
+- [x] Tiga akhir sejak awal perancangan
+- [x] Tanpa jump scare; rasa seram lewat animasi hantu yang menyerang pemain
+- [x] Kustomisasi pemain hanya nama; penampilan karakter tetap
+- [x] Setelah PRD disetujui, lanjut ke ERD dan struktur folder sebelum kode
